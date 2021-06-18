@@ -30,11 +30,14 @@ window.addEventListener("load", function() {
       let cargoMass = document.querySelector("input[name = cargoMass");
       if (isNaN(pilotName.value) === false || isNaN(copilotName.value) === false) {
          alert("Pilot and Copilot names must made up of a string of letters.");
+         return;
       } else if (isNaN(fuelLevel.value) === true || isNaN(cargoMass.value) === true) {
          alert("Fuel level and cargo mass must be numbers.");
+         return;
       }
       else if (pilotName.value === "" || copilotName.value === "" || fuelLevel.value === "" || cargoMass.value === "") {
          alert("All fields are required for submission.");
+         return;
       } 
       document.getElementById("pilotStatus").innerHTML = `Pilot, ${pilotName.value}, is ready`;
       document.getElementById("copilotStatus").innerHTML = `Co-pilot, ${copilotName.value}, is ready`;
